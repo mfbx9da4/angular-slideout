@@ -1,0 +1,144 @@
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.slideLeft{
+  animation-name: slideLeft;
+  -webkit-animation-name: slideLeft;
+
+  animation-duration: 0.5s;
+  -webkit-animation-duration: 0.5s;
+
+  -webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+     -moz-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+       -o-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+          transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000); /* easeOutCubic */
+
+  visibility: visible !important;
+}
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@-webkit-keyframes slideLeft {
+  0% {
+    -webkit-transform: translateX(100%);
+  }
+  100% {
+    -webkit-transform: translateX(0%);
+  }
+}
+
+.slideRight{
+  animation-name: slideRight;
+  -webkit-animation-name: slideRight;
+
+  animation-duration: 0.5s;
+  -webkit-animation-duration: 0.5s;
+
+  -webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+     -moz-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+       -o-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+          transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000); /* easeOutCubic */
+
+
+  visibility: visible !important;
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@-webkit-keyframes slideRight {
+  0% {
+    -webkit-transform: translateX(-100%);
+  }
+  100% {
+    -webkit-transform: translateX(0%);
+  }
+}
+
+/**
+*
+* Overlay
+*
+**/
+
+.slideout-overlay {
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: rgba(0,0,0,0.2);
+  content: '';
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+  width: 0px;
+  height: 0px;
+  opacity: 0;
+}
+
+.slideout-overlay-show {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+}
+
+/**
+*
+* Prevent scroll of body when open
+*
+**/
+.slideout-prevent-scroll {
+  overflow: hidden;
+  height: 100%;
+  position: absolute;
+}
+
+/**
+*
+* Default slideout styles.
+*
+**/
+
+.slideout {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  z-index: 11;
+}
+
+.slideout.slideout-from-right {
+  left: 100%;
+}
+.slideout.slideout-from-left {
+  left: -100%;
+}
+
+/* Variables to control slideout width */
+.slideout {
+  width: 90%;
+}
+.slideout-open.slideout-from-right {
+  left: 10%;
+}
+.slideout-open.slideout-from-left {
+  left: -0%;
+}
+/* END: Variables to control slideout width */

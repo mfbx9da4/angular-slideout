@@ -1,0 +1,68 @@
+<!doctype html>
+<html ng-app="app" lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Slideout Demo</title>
+  <meta http-equiv="cleartype" content="on">
+  <meta name="MobileOptimized" content="320">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" type="text/css" href="demo.css">
+  <link rel="stylesheet" type="text/css" href="slideout.css">
+</head>
+<body ng-controller="main">
+  <div class="container" ng-swipe-left="show_menu = true" ng-swipe-right="show_menu = false; show_sub_menu = false;">
+
+    <nav slideout="show_menu" slideout-direction="from-left">
+      <div class="back-button" ng-click="show_menu = false;">Back</div>
+      <h2>Menu</h2>
+      <ul>
+        <li><a ng-click="show_sub_menu = true;" href="#">Go to sub menu</a></li>
+        <li><a ng-click="show_sub_menu = true;" href="#">Go to sub menu</a></li>
+        <li><a ng-click="show_sub_menu = true;" href="#">Go to sub menu</a></li>
+        <li><a ng-click="show_sub_menu = true;" href="#">Go to sub menu</a></li>
+      </ul>
+    </nav>
+
+    <nav slideout="show_sub_menu">
+      <div class="back-button" ng-click="show_sub_menu = false;">Back</div>
+      <h2>Sub menu</h2>
+      <ul>
+        <li><a href="#">Dummy link</a></li>
+        <li><a href="#">Dummy link</a></li>
+        <li><a href="#">Dummy link</a></li>
+        <li><a href="#">Dummy link</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <header>
+        <h2>Main content</h2>
+        <div class="show-sidebar" ng-click="show_menu = true;">
+          Show sidebar
+        </div>
+      </header>
+      <section>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis architecto, adipisci repellendus aspernatur sit quia nulla quos officiis? Libero est aliquam, odio aliquid dolores mollitia ut quisquam iusto cupiditate labore?</p>
+        <p>Nesciunt quod velit alias commodi autem inventore error mollitia eaque recusandae! Voluptatum reprehenderit minus quod aliquam cupiditate, nobis odit culpa, esse assumenda molestias beatae voluptatibus nostrum debitis. Non, dolor, voluptatum.</p>
+        <p>Labore maiores cum repellat voluptate aspernatur, qui sapiente et deleniti ex ab consectetur, nihil sed corrupti quod. Tenetur adipisci cumque unde, magnam tempore autem perferendis, itaque, mollitia quod sunt explicabo.</p>
+        <p>Assumenda facilis placeat reiciendis ullam facere omnis, nam dignissimos fugit repellendus quaerat molestias, eaque ea est. Repellendus veritatis neque libero expedita obcaecati nulla esse, ipsam vitae aspernatur fugiat magnam quos.</p>
+        <p>Dolore laborum minus reiciendis, ab assumenda, blanditiis ducimus sunt perferendis error sapiente doloribus modi quisquam provident amet magnam aliquid doloremque rerum cumque! Voluptates est, animi tempora distinctio dolores. Aliquam, magni.</p>
+        <p>Eum tempore temporibus laborum quia numquam iusto facilis nam corporis non quidem animi consectetur laboriosam distinctio architecto modi assumenda vero, inventore labore reprehenderit consequatur ex aliquid error quis officiis porro.</p>
+        <p>Sint esse, doloribus quaerat perferendis eum assumenda veniam totam iste dolores laborum maiores ipsa ipsam nam fuga quisquam dolorem rem error facilis molestias eaque architecto non. Labore possimus odit voluptas!</p>
+        <p>Iure, quod dolorum. Illum, laborum perspiciatis. Cupiditate dicta et, neque unde inventore incidunt ex ipsam officia beatae. Nobis nesciunt qui, obcaecati quaerat eaque dolorem quas reprehenderit veniam. Labore, sit, earum.</p>
+        <p>Eligendi aspernatur, quia ullam. Voluptatem itaque et, rem ipsa hic repudiandae reprehenderit ratione velit. Error aliquid dignissimos dolor quos, ea maxime unde voluptatem, consequuntur vitae voluptas, nobis cum natus inventore!</p>
+        <p>Cupiditate est facilis, neque et ullam aliquid numquam similique expedita amet velit dignissimos! Magnam tenetur accusantium quo voluptatibus officia sint libero eligendi quae porro, sunt! Adipisci aspernatur suscipit ad dolorem.</p>
+      </section>
+    </main>
+  </div>
+
+  <script src="http://code.angularjs.org/1.2.19/angular.min.js"></script>
+  <script src="http://code.angularjs.org/1.2.19/angular-touch.min.js"></script>
+  <script src="main.js"></script>
+  <script src="slideout.js"></script>
+
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+</body>
+</html>
