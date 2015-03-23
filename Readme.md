@@ -16,10 +16,13 @@ Look in index.html for full demo.
 
 Import angular and slideoutjs.
 
+	<!-- Angular -->
 	<script src="http://code.angularjs.org/1.2.19/angular.min.js"></script>
-	<!-- Not required -->
+	<!-- Angular touch (not required) -->
 	<script src="http://code.angularjs.org/1.2.19/angular-touch.min.js"></script>
+	<!-- Controller -->
 	<script src="myController.js"></script>
+	<!-- Slideout directive -->
 	<script src="slideout.js"></script>
 
 **Configure slideout attribute:** Use a boolean variable to determine whether to show slideout.
