@@ -2,7 +2,7 @@
 
 Lightweight angular slideout directive for mobile which does not require angular-animate.js
 
-<!-- ### [Demo]() -->
+### [Demo](http://mfbx9da4.github.io/projects/angular-slideout)
 
 ### Dependencies
 
