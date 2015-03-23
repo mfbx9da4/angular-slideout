@@ -18,11 +18,11 @@ var app = angular.module('app', ['ngTouch']);
 app.controller('main', function($scope) {
     $scope.log = function () {
         console.log('hi');
-        $scope.show_sub_menu = false;
     }
-    $scope.thing = function () {
+    $scope.randomBool = function () {
         return Math.random() > 0.5;
     }
-    console.info('scope avaible at sc')
+    console.info('$scope avaible as sc')
     window.sc = $scope;
 });
+document.querySelector('.loader').remove();
