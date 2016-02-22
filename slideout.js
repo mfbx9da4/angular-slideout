@@ -25,7 +25,6 @@ app.directive('slideout', ['$document', '$window', '$timeout', function($documen
             var expression = attrs.slideout;
 
             // Set expression to false on click overlay
-            // (TODO) this assumes that the expression is just a variable :-/
             overlay_element.on('click', function () {
                 $scope.$apply(function () {
                     $scope[attrs.slideout] = false;
@@ -63,8 +62,6 @@ app.directive('slideout', ['$document', '$window', '$timeout', function($documen
 
                         /*
                          * Timeout to notify end of animation.
-                         * (TODO) Would prefer to use .on("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd")
-                         *        but couldn't get it to wocrk consistently.
                          */
                         $timeout(function() {
                             element.data('is_animating', false);
