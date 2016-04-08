@@ -15,15 +15,15 @@ If you are using npm or webpack
 
     npm install --save angular-slideout
 
+Import angular-slideout after angular and require it as a module to your app.
+
 ```js
 var angular_slideout = require('angular-slideout');
 var app = angular.module('app', ['angular-slideout', 'ngTouch']);
 app.controller('main', function($scope) {});
 ```
 
-Look in index.html for full demo.
-
-Otherwise import angular and slideoutjs.
+Otherwise import `slideout.min.js` as so.
 
 ```html
 <!-- Angular -->
@@ -44,15 +44,15 @@ Otherwise import angular and slideoutjs.
 
 #### Configure your sidebar content
 
-* **Configure slideout attribute:** Use a boolean variable to determine whether to show slideout.
-* **Configure slideout direction:** Options are 'from-left' or 'from-right'
-
 ```html
 <nav slideout="show_menu" slideout-direction="from-left">
   <div class="back-button" ng-click="show_menu = false;">Back</div>
   <h2>Menu content</h2>
 </nav>
 ```
+
+* **The slideout attribute:** Use a boolean variable to determine whether to show slideout.
+* **The slideout direction:** Options are 'from-left' or 'from-right'
 
 ####Configure sidebar toggles
 
