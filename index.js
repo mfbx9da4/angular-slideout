@@ -1,2 +1,2 @@
 require('./slideout.min.js');
-module.exports = 'ng-slideout';
+module.exports = 'angular-slideout';

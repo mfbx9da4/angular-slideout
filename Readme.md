@@ -52,7 +52,7 @@ Otherwise import `slideout.min.js` as so.
 ```
 
 * **The slideout attribute:** Use a boolean variable to determine whether to show slideout.
-* **The slideout direction:** Options are 'from-left' or 'from-right'
+* **The slideout direction:** Options are `from-left` or `from-right`
 
 ####Configure sidebar toggles
 
