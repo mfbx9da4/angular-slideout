@@ -8,30 +8,68 @@
   <meta name="HandheldFriendly" content="True">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <link rel="stylesheet" type="text/css" href="slideout.css">
-  <link rel="stylesheet" type="text/css" href="demo.css">
+  <link rel="stylesheet" type="text/css" href="demo/demo.css">
+  <style>
+  @media (max-width: 730px) {
+    #forkme {
+      display: none;
+    }
+  }
+  </style>
 </head>
 <body ng-controller="main">
-  <a href="https://github.com/mfbx9da4/angular-slideout"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
+  <a id="forkme" href="https://github.com/mfbx9da4/angular-slideout"><img style="position: absolute; z-index:2; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
   <div style="position: absolute; width: 100%; background-color: #222; height: 100%; top: 0; z-index: 99;" class="loader">
     <h1 style="margin: 0 auto; color: white; width: 123px;margin-top: 123px;">Loading</h1>
   </div>
-  <div class="container" ng-swipe-left="show_menu = true" ng-swipe-right="show_menu = false; show_sub_menu = false;">
+  <div class="container"
+            ng-swipe-left="show_right_menu = !show_left_menu;
+                           show_left_menu = false;
+                           show_left_sub_menu = false;"
+            ng-swipe-right="show_left_menu = !show_right_menu;
+                            show_right_menu = false;
+                            show_right_sub_menu = false;">
 
-    <nav slideout="show_menu" slideout-direction="from-right">
-      <div class="back-button" ng-click="show_menu = false;">Back</div>
-      <h2>Menu</h2>
+  <!-- Right menu -->
+    <nav slideout="show_right_menu" slideout-direction="from-right">
+      <div class="back-button" ng-click="show_right_menu = false;">Back</div>
+      <h2>Right Menu</h2>
       <ul>
-        <li><a ng-click="show_sub_menu = true;" href="#">Go to sub menu</a></li>
-        <li><a ng-click="show_sub_menu = true;" href="#">Go to sub menu</a></li>
-        <li><a ng-click="show_sub_menu = true;" href="#">Go to sub menu</a></li>
-        <li><a ng-click="show_sub_menu = true;" href="#">Go to sub menu</a></li>
+        <li><a ng-click="show_right_sub_menu = true;" href="#">Go to sub menu</a></li>
+        <li><a ng-click="show_right_sub_menu = true;" href="#">Go to sub menu</a></li>
+        <li><a ng-click="show_right_sub_menu = true;" href="#">Go to sub menu</a></li>
+        <li><a ng-click="show_right_sub_menu = true;" href="#">Go to sub menu</a></li>
       </ul>
     </nav>
 
-    <nav slideout="show_sub_menu">
-      <div class="back-button" ng-click="show_sub_menu = false;">Back</div>
-      <h2>Sub menu</h2>
+    <!-- Right sub menu -->
+    <nav slideout="show_right_sub_menu">
+      <div class="back-button" ng-click="show_right_sub_menu = false;">Back</div>
+      <h2>Right Sub menu</h2>
+      <ul>
+        <li><a href="#">Dummy link</a></li>
+        <li><a href="#">Dummy link</a></li>
+        <li><a href="#">Dummy link</a></li>
+        <li><a href="#">Dummy link</a></li>
+      </ul>
+    </nav>
+
+    <!-- Left menu -->
+    <nav slideout="show_left_menu" slideout-direction="from-left">
+      <div class="back-button" ng-click="show_left_menu = false;">Back</div>
+      <h2>Left Menu</h2>
+      <ul>
+        <li><a ng-click="show_left_sub_menu = true;" href="#">Go to sub menu</a></li>
+        <li><a ng-click="show_left_sub_menu = true;" href="#">Go to sub menu</a></li>
+        <li><a ng-click="show_left_sub_menu = true;" href="#">Go to sub menu</a></li>
+        <li><a ng-click="show_left_sub_menu = true;" href="#">Go to sub menu</a></li>
+      </ul>
+    </nav>
+
+    <!-- Left sub menu -->
+    <nav slideout="show_left_sub_menu" slideout-direction="from-left">
+      <div class="back-button" ng-click="show_left_sub_menu = false;">Back</div>
+      <h2>Left Sub menu</h2>
       <ul>
         <li><a href="#">Dummy link</a></li>
         <li><a href="#">Dummy link</a></li>
@@ -42,9 +80,15 @@
 
     <main>
       <header>
-        <h2>Main content</h2>
-        <div class="show-sidebar" ng-click="show_menu = true;">
-          Show sidebar
+        <h2>Try swiping left or right or click on the buttons below</h2>
+        <div class="show-sidebar" ng-click="show_left_menu = true;">
+          Show left sidebar
+        </div>
+
+        <p></p>
+
+        <div class="show-sidebar" ng-click="show_right_menu = true;">
+          Show right sidebar
         </div>
       </header>
       <section>
@@ -64,8 +108,8 @@
 
   <script src="http://code.angularjs.org/1.2.19/angular.min.js"></script>
   <script src="http://code.angularjs.org/1.2.19/angular-touch.min.js"></script>
-  <script src="main.js"></script>
   <script src="slideout.js"></script>
+  <script src="demo/bundle.js"></script>
 
   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 </body>

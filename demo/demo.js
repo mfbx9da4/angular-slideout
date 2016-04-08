@@ -14,7 +14,8 @@ if (!window.getComputedStyle) {
         return this;
     }
 }
-var app = angular.module('app', ['ngTouch']);
+
+var app = angular.module('app', ['angular-slideout', 'ngTouch']);
 app.controller('main', function($scope) {
     $scope.log = function () {
         console.log('hi');
@@ -22,7 +23,8 @@ app.controller('main', function($scope) {
     $scope.randomBool = function () {
         return Math.random() > 0.5;
     }
-    console.info('$scope avaible as sc')
     window.sc = $scope;
 });
 document.querySelector('.loader').remove();
+
+module.exports = "main.js";

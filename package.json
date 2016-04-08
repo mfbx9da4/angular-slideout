@@ -1,0 +1,33 @@
+{
+  "name": "angular-slideout",
+  "version": "1.0.0",
+  "description": "Lightweight angular slideout directive for mobile which does not require angular-animate.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mfbx9da4/angular-slideout.git"
+  },
+  "keywords": [
+    "angularjs",
+    "slideout"
+  ],
+  "author": "David Alberto Adler dalberto.adler@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mfbx9da4/angular-slideout/issues"
+  },
+  "homepage": "https://github.com/mfbx9da4/angular-slideout#readme",
+  "dependencies": {
+    "angular": ""
+  },
+  "devDependencies": {
+    "css-loader": "^0.23.1",
+    "gulp": "^3.9.1",
+    "gulp-watch": "^4.3.5",
+    "gulp-webpack": "^1.5.0",
+    "style-loader": "^0.13.1"
+  }
+}

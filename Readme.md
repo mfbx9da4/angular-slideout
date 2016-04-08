@@ -6,7 +6,7 @@ Lightweight angular slideout directive for mobile which does not require angular
 
 ### Dependencies
 
-- Tested with AngularJS v1.2.18
+- angular
 - Optional dependency of angular touch for swiping menu away
 
 ### Usage
