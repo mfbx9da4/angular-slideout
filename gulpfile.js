@@ -1,10 +1,11 @@
 var gulp = require('gulp');
-var watch = require('gulp-watch');
-var webpack = require('gulp-webpack');
+var gulpWebpack = require('gulp-webpack');
+var webpack = require('webpack');
+
 
 gulp.task('demo', function() {
   return gulp.src('./demo/main.js')
-    .pipe(webpack({
+    .pipe(gulpWebpack({
     	watch: true,
     	output:{filename:'bundle.js'}
     }))
@@ -13,14 +14,15 @@ gulp.task('demo', function() {
 
 gulp.task('slideout', function() {
   return gulp.src('./src/slideout.js')
-    .pipe(webpack({
+    .pipe(gulpWebpack({
     	watch: true,
-    	output:{filename:'slideout.js'},
+    	output:{filename:'slideout.min.js'},
     	module: {
     	    loaders: [
     	        { test: /\.css$/, loader: "style-loader!css-loader" }
     	    ]
-    	}
+    	},
+        plugins: [new webpack.optimize.UglifyJsPlugin()]
     }))
     .pipe(gulp.dest('./'));
 });

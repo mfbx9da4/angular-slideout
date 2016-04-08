@@ -9,26 +9,43 @@ Lightweight angular slideout directive for mobile which does not require angular
 - angular
 - Optional dependency of angular touch for swiping menu away
 
-### Usage
+### Install
+
+If you are using npm or webpack 
+
+    npm install --save angular-slideout
+
+```js
+var angular_slideout = require('angular-slideout');
+var app = angular.module('app', ['angular-slideout', 'ngTouch']);
+app.controller('main', function($scope) {});
+```
 
 Look in index.html for full demo.
 
-
-Import angular and slideoutjs.
+Otherwise import angular and slideoutjs.
 
 ```html
 <!-- Angular -->
 <script src="http://code.angularjs.org/1.2.19/angular.min.js"></script>
 <!-- Angular touch (not required) -->
 <script src="http://code.angularjs.org/1.2.19/angular-touch.min.js"></script>
-<!-- Controller -->
-<script src="myController.js"></script>
-<!-- Slideout directive -->
-<script src="slideout.js"></script>
+<!-- Slideout module -->
+<script src="slideout.min.js"></script>
+<!-- Your App Code -->
+<script>
+    // import angular-slideout
+    var app = angular.module('app', ['angular-slideout', 'ngTouch']);
+    app.controller('main', function($scope) {});
+</script>
 ```
 
-**Configure slideout attribute:** Use a boolean variable to determine whether to show slideout.
-**Configure slideout direction:** Options are 'from-left' or 'from-right'
+### Usage
+
+#### Configure your sidebar content
+
+* **Configure slideout attribute:** Use a boolean variable to determine whether to show slideout.
+* **Configure slideout direction:** Options are 'from-left' or 'from-right'
 
 ```html
 <nav slideout="show_menu" slideout-direction="from-left">
@@ -37,7 +54,7 @@ Import angular and slideoutjs.
 </nav>
 ```
 
-Configure toggles
+####Configure sidebar toggles
 
 ```html
 <div class="show-sidebar" ng-click="show_menu = true;">
@@ -45,7 +62,7 @@ Configure toggles
 </div>
 ```
 
-Configure swipe toggles (requires angular-touch)
+####Configure swipe toggles (requires angular-touch)
 
 ```html
 <div class="container"
